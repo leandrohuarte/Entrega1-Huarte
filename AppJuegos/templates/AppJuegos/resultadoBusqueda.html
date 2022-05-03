@@ -1,0 +1,10 @@
+<p>Estamos buscando el: {{genero}}</p>
+{% if juegosps4 %}
+<ul>
+{% for juegops4 in juegosps4 %}
+    <li>{{juegops4.nombre}}</li>
+    <li>{{juegops4.precio}}</li>
+    
+{% endfor %}
+</ul>
+{% endif %}
