@@ -1,10 +1,21 @@
-<p>Estamos buscando el: {{genero}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Estamos buscando el: {{genero}}</p>
 {% if juegosps4 %}
 <ul>
-{% for juegops4 in juegosps4 %}
-    <li>{{juegops4.nombre}}</li>
-    <li>{{juegops4.precio}}</li>
+{% for juegosps4 in juegosps4 %}
+    <li> {{juegosps4.nombre}} </li>
+    <li> {{juegosps4.precio}} </li>
     
 {% endfor %}
 </ul>
 {% endif %}
+</body>
+</html>
