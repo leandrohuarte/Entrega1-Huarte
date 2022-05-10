@@ -35,18 +35,18 @@ def pagos(request):
     return render(request, "AppJuegos/pagos.html")
 
 def ps4formulario(request):
-    #if request.method == "POST":
-     #   miFormulario = Ps4Formulario(request.POST)
-      #  print(miFormulario)
-       # if miFormulario.is_valid():
-        #    informacion= miFormulario.cleaned_data
-         #   ps4= PS4(nombre=informacion["nombre"], genero=informacion["genero"], precio=informacion["precio"])
-          #  ps4.save()
-           # return render(request, "AppJuegos/inicio.html")
+    if request.method == "POST":
+        miFormulario = Ps4Formulario(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid():
+            informacion= miFormulario.cleaned_data
+            ps4= PS4(nombre=informacion["nombre"], genero=informacion["genero"], precio=informacion["precio"])
+            ps4.save()
+            return render(request, "AppJuegos/inicio.html")
 
-    #else:
-     #   miFormulario = Ps4Formulario()
-    #return render(request, "AppJuegos/juegosPS4Formulario.html", {"miFormulario": miFormulario})
+    else:
+        miFormulario = Ps4Formulario()
+    return render(request, "AppJuegos/juegosPS4Formulario.html", {"miFormulario": miFormulario})
     return
 def xboxformulario(request):
     if request.method == "POST":
