@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for p in juegosps4 %}
+    <li>{{p}}</li>
+    <button>
+        <a href="{% url 'EliminarJuegosPs4' p.nombre %}"> Eliminar </a>
+        
+    </button>
+
+    <button>
+        <a href="{% url 'EditarJuegosPs4' p.nombre %}"> Editar </a>
+    </button>
+    <br>
+    {% endfor %}
+
+    <a href="juegosps4"> Agregar otro juego de PS4 </a>
+
+</body>
+</html>

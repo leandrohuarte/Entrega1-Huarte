@@ -1,0 +1,31 @@
+{% extends "AppJuegos/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<body>
+    <h1> Juegos de Xbox</h1>
+
+    <a  href="{% url 'New' %}">Crear</a>
+    
+    <ul>
+
+        {% for juego in object_list %}
+
+         <li>
+                <p>Nombre: {{juego.nombre}}</p>
+                <p>Genero: {{juego.genero}}</p>
+                <p>Precio: {{juego.precio}}</p>
+                
+                <p>
+                    
+                    <a  href="{% url 'Detail' juego.id %}">Ver</a>
+                    <a  href="{% url 'Edit'  juego.id %}">Editar</a>
+                    <a  href="{% url 'Delete' juego.id %}">Borrar</a>
+                </p>
+                
+                
+
+         </li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}

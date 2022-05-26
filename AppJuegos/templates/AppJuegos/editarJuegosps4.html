@@ -1,0 +1,11 @@
+<h1>Formulario - Editar Juegos Ps4</h1>
+{% if miFormulario.errors %}
+<p style="color: red"> Están mal los datos </p>
+{% endif %}
+
+<form action="" method="POST"> {%csrf_token%}
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit", value="Enviar", style="color:blue">
+</form>
