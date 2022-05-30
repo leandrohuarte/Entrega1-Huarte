@@ -1,7 +1,12 @@
 {% extends "AppJuegos/padre.html" %}
 {% load static %}
+
+{% block contenidoAvatar %}
+<img src="{{url}}" height="40px">
+{% endblock %}
+
 {% block contenidoQueCambia %}
-<h1>Bienvenidos a nuestra página de venta de juegos digitales</h1>
+<h1>Bienvenidos a nuestra página de juegos digitales</h1>
 <h2 style="color: black;">{{mensaje}}</h2>
 {% endblock %}
 

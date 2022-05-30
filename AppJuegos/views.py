@@ -5,7 +5,7 @@ from django.template import loader
 from django.urls import is_valid_path
 import AppJuegos
 from AppJuegos.forms import Ps4Formulario, UserRegisterForm, UserCreationForm , XboxFormulario, ColeccionFormulario, PagoFormulario
-from AppJuegos.models import PS4, Xbox, Coleccion, Pago
+from AppJuegos.models import PS4, Xbox, Coleccion, Pago, Avatar
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -16,10 +16,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required
 def inicio(request):
-    
-    return render(request, "AppJuegos/inicio.html")
+    avatares = Avatar.objects.filter(user=request.user.id)
+    return render(request, "AppJuegos/inicio.html", {"url":avatares[0].imagen.url})
 
 def juegosPS4(request):
     if request.method == "POST":
@@ -180,17 +180,17 @@ class JuegosXboxDetalle(DetailView):
 
 class JuegosXboxCreacion(CreateView):
     model = Xbox
-    success_url = "/AppJuegos/xbox/listaJuegosXbox"
+    success_url = "/AppJuegos/xbox"
     fields = ["nombre", "genero", "precio"]
 
 class JuegosXboxUpdate(UpdateView):
     model = Xbox
-    success_url = "/AppJuegos/xbox/listaJuegosXbox"
+    success_url = "/AppJuegos/xbox"
     fields = ["nombre", "genero", "precio"]
 
 class JuegosXboxDelete(DeleteView):
     model = Xbox
-    success_url = "/AppJuegos/xbox/listaJuegosXbox"
+    success_url = "/AppJuegos/xbox"
 
 def login_request(request):
     if request.method == "POST":
@@ -235,3 +235,10 @@ def editarUsuario(request):
     else:
         miFormulario= UserRegisterForm(initial={"username": usuario.username, "email": usuario.email})
     return render(request, "AppJuegos/editarPerfil.html",{'miFormulario': miFormulario, 'usuario': usuario.username})
+
+def acerca(request):
+    return render (request,  "AppJuegos/aboutus.html")
+
+
+
+   

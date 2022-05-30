@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class PS4 (models.Model):
@@ -41,3 +42,10 @@ class Pago (models.Model):  #no sé si es mejor poner pago o explicacion, y lo d
     def __str__(self):
         txt = "{0} - {1} - {2} "
         return txt.format(self.metodo, self.consola, self.precio)
+
+class Avatar (models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='avatares', null=True, blank=True)
+    class Meta:
+        verbose_name= "Avatar"
+        verbose_name_plural= "Avatares"
