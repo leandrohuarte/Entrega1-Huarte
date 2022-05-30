@@ -1,4 +1,17 @@
-# Entrega1-Proyecto final del curso Python de CoderHouse
+Proyecto final del curso Python de CoderHouse
+
+superusuario ProfeCoder
+password  pythoncoder
+
+Cassandra Gaggiotti hizo forms de creacion y busqueda de datos, login logout (con sus html), edicion de ps4, views
+Leandro Huarte hizo htmls restantes, clases basadas en vistas, modelos y views
+Ambos fuimos agregando modelos, views y urls a medida que ibamos avanzando
+
+
+
+
+
+
 Entrega intermedia del proyecto final
 Con Cassandra Gaggiotti elegimos hacer una página de venta de juegos digitales. 
 Tomamos el archivo del entregable anterior mío (MVT_HUARTE), cambiamos el nombre de la aplicacion a AppJuegos y como primera medida le agregamos las clases que queríamos en models (juegos PS4, colecciones y pagos), junto con sus views, importando los modelos necesarios en cada caso.
