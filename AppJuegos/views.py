@@ -53,7 +53,19 @@ def juegosXbox(request):
     #return render(request, "AppJuegos/juegosXbox.html")
 
 def colecciones(request):
-    return render(request, "AppJuegos/colecciones.html")
+    if request.method == "POST":
+        miFormulario= ColeccionFormulario(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid():
+            informacion= miFormulario.cleaned_data
+            colec= Coleccion(nombre=informacion["nombre"], genero=informacion["genero"], consola=informacion["consola"])
+            colec.save()
+            return render(request, "AppJuegos/inicio.html")
+
+    else:
+        miFormulario = ColeccionFormulario()
+    return render(request, "AppJuegos/colecciones.html", {"miFormulario": miFormulario})
+    #return render(request, "AppJuegos/colecciones.html")
 
 def pagos(request):
     if request.method == "POST":

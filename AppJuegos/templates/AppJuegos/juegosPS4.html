@@ -14,7 +14,7 @@
 
     <form action="" method="POST"> {% csrf_token %}
         <table>
-
+<h5>Agregá tu juego de PS4 acá.</h5>
           {{miFormulario.as_table}}
 
         </table>
@@ -22,4 +22,9 @@
         <input type="submit" value="Enviar">
    </form>
 
+  
+{% endblock %}
+
+{% block contenidoQueCambia3 %}
+<a class="navbar-brand" href="{% url 'LeerJuegosPs4' %}">¡Hacé click para ver los juegos de PS4 disponibles!</a> <br>
 {% endblock %}

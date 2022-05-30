@@ -3,3 +3,25 @@
 {% block contenidoQueCambia %}
 <h1>Encontrá tu saga favorita</h1>
 {% endblock %}
+
+{% block contenidoQueCambia2 %}
+
+{% if miFormulario.errors %}
+    <p style="color: red;">Datos incorrectos</p>
+    {% endif %}
+
+
+
+    <form action="" method="POST"> {% csrf_token %}
+       <table>
+      <h5>Agregá tu colección acá.</h5>
+
+         {{miFormulario.as_table}}
+
+       </table>
+
+        <input type="submit" value="Enviar">
+   </form>
+
+{% endblock %}
+

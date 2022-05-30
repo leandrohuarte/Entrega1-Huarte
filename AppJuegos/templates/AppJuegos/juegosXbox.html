@@ -2,12 +2,9 @@
 {% load static %}
 {% block contenidoQueCambia %}
 <h1>Juegos de XBOX ONE/XBOX 360</h1>
-
-
 {% endblock %}
 
 {% block contenidoQueCambia2 %}
-
 
 {% if miFormulario.errors %}
     <p style="color: red;">Datos incorrectos</p>
@@ -17,6 +14,7 @@
 
     <form action="" method="POST"> {% csrf_token %}
         <table>
+          <h5>Agregá tu juego de XBOX acá.</h5>
 
           {{miFormulario.as_table}}
 
@@ -27,4 +25,8 @@
 
   </head>
 
+{% endblock %}
+
+{% block contenidoQueCambia4 %}
+<a class="navbar-brand" href="{% url 'ListaJuegosXbox' %}">¡Hacé click para ver los juegos de XBOX disponibles!</a> <br>
 {% endblock %}
