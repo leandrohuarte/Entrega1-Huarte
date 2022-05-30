@@ -13,7 +13,7 @@ Ambos fuimos agregando modelos, views y urls a medida que ibamos avanzando
 
 
 Entrega intermedia del proyecto final
-Con Cassandra Gaggiotti elegimos hacer una página de venta de juegos digitales. 
+Con Cassandra Gaggiotti elegimos hacer una página juegos digitales. 
 Tomamos el archivo del entregable anterior mío (MVT_HUARTE), cambiamos el nombre de la aplicacion a AppJuegos y como primera medida le agregamos las clases que queríamos en models (juegos PS4, colecciones y pagos), junto con sus views, importando los modelos necesarios en cada caso.
 Posteriormente generamos el urls.py dentro de la app para agregar los path, y en el url de la carpeta del proyecto global agregamos el url de la app.
 Chequeamos el funcionamiento de los mismos, con el checkapp y runserver, para verificar que las clases estaban bien creadas y relacionadas con sus vistas.
