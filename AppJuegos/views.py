@@ -1,10 +1,7 @@
 from msilib.schema import ListView
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.template import loader
-from django.urls import is_valid_path
-import AppJuegos
-from AppJuegos.forms import Ps4Formulario, UserRegisterForm, UserCreationForm , XboxFormulario, ColeccionFormulario, PagoFormulario
+from AppJuegos.forms import Ps4Formulario, UserRegisterForm, XboxFormulario, ColeccionFormulario, PagoFormulario
 from AppJuegos.models import PS4, Xbox, Coleccion, Pago, Avatar
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
